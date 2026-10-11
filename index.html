@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 1 | My Devi Ji ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;overflow-x:hidden;
+  display:grid;place-items:center;padding:22px;
+  font-family:Georgia,serif;color:#fff5df;text-align:center;
+  background:radial-gradient(circle at top,#b52b38,#52051d 55%,#200014);
+}
+.card{
+  position:relative;z-index:1;width:100%;max-width:520px;
+  padding:34px 22px;border:1px solid #ffd779;
+  border-radius:28px;background:#610b2dbd;
+  box-shadow:0 0 40px #ffcc6640;
+}
+h1{color:#ffe09a;font-size:clamp(38px,9vw,58px);margin:14px 0}
+.art{font-size:76px;filter:drop-shadow(0 0 18px #ffd26b)}
+p{font-size:16px;line-height:1.9}
+button{
+  margin-top:18px;padding:14px 24px;border:0;border-radius:30px;
+  background:linear-gradient(120deg,#fff0ad,#ffb83f);
+  color:#68132b;font-weight:bold;font-size:15px;cursor:pointer;
+}
+#message{display:none;margin-top:22px;color:#ffe5aa}
+.fall{
+  position:fixed;top:-35px;z-index:3;pointer-events:none;
+  animation:drop linear forwards;
+}
+@keyframes drop{
+  to{transform:translateY(110vh) rotate(500deg);opacity:0}
+}
+</style>
+</head>
+<body>
+<main class="card">
+  <div style="font-size:25px">🪔 🌺 🙏 🌺 🪔</div>
+  <p>DAY 1 • MAA SHAILPUTRI</p>
+  <div class="art">🌺</div>
+  <h1>Happy Navratri</h1>
+  <h2>My Personal Devi Ji ❤️🙇</h2>
+  <p>
+    On this beautiful first day of Navratri,
+    I pray that Maa Durga fills your life with
+    happiness, strength, love, and endless blessings.
+  </p>
+  <p>
+    You are my favourite blessing, my sweetest smile,
+    and the beautiful soul I will always cherish. ❤️
+  </p>
+  <button onclick="surprise()">A Message For You 💌</button>
+  <div id="message">
+    <h2>Meri Devi Ji 🙇🌹</h2>
+    <p>
+      May every new beginning bring you closer to your dreams.
+      I promise to respect your heart, appreciate your smile,
+      and remind you how special you are.
+      <br><br>
+      I bow to the beautiful soul you are. 🙇❤️
+      <br><br>
+      Jai Mata Di! Happy Navratri, meri jaan! 🌺
+    </p>
+  </div>
+</main>
+<script>
+const flowers=["🌸","🌺","🌹","❤️","💕","✨","🙇","🪷"];
+function drop(){
+  const el=document.createElement("span");
+  el.className="fall";
+  el.textContent=flowers[Math.floor(Math.random()*flowers.length)];
+  el.style.left=Math.random()*100+"vw";
+  el.style.fontSize=(16+Math.random()*20)+"px";
+  const duration=4+Math.random()*5;
+  el.style.animationDuration=duration+"s";
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),duration*1000);
+}
+setInterval(drop,300);
+function surprise(){
+  document.getElementById("message").style.display="block";
+  for(let i=0;i<35;i++)setTimeout(drop,i*60);
+}
+</script>
+</body>
+</html>
